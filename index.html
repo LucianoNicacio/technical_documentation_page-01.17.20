@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/stylesheet.css">
+</head>
+  <body>
+
+    <div>
+      <header>
+        <nav id="navbar">
+          <header>
+            <h1>CSS Grid Documentation</h1>
+          </header>
+          <a class="nav-link" href="#What_is_CSS_Grid">What is CSS Grid</a>
+          <a class="nav-link" href="#Initial_Step">Initial Step</a>
+          <a class="nav-link" href="#Grid_Columns">Grid Columns</a>
+          <a class="nav-link" href="#Grid_Rows">Grid Rows</a>
+          <a class="nav-link" href="#Columns_and_Rows">Columns and Rows</a><a class="nav-link" href="#Cell_Measurements">Cell Measurements</a>
+          <a class="nav-link" href="#Grid_Gaps">Grid Gaps</a>
+          <a class="nav-link" href="#Spacing_and_Aligning">Spacing and Aligning</a>
+        </nav>
+      </header>
+      <main id="main-doc">
+        <section id="What_is_CSS_Grid" class="main-section">
+          <header>What is CSS Grid</header>
+          <p>CSS grid is a layout tool for websites utilizing html and css. Websites can be easily organized and aligned into columns and rows.</p>
+        </section>
+        <section id="Initial_Step" class="main-section">
+          <header>Initial Step</header>
+          <p>To turn any element into a grid container, you need to create a grid in CSS. This is done by using the property display and setting it to grid. For instance, for the div with the id container, this is what it would look like:</p>
+          <pre><code>.container {
+          display: grid;
+        }
+    </code></pre>
+          <p>At this point you can utilize all of the other tools associated with CSS Grid.</p>
+        </section>
+        <section id="Grid_Columns" class="main-section">
+          <header>Grid Columns</header>
+          <p>After the grid element is created, you can define the structure of your grid in several ways. To organize your grid into columns, use the grid-template-column property, like this:</p>
+          <pre><code>.container {
+          display: grid;
+          grid-template-columns: 50px 50px;
+        }
+    </code></pre>
+          <p>This will give your grid two columns 50px wide. To increase the number of columns, simply add extra widths. To create 4 columns 100px wide, the code would look like this: </p>
+          <pre><code>.container {
+          display: grid;
+          grid-template-columns: 100px 100px 100px 100px;
+        }
+    </code></pre>
+        </section>
+        <section id="Grid_Rows" class="main-section">
+          <header>Grid Rows</header>
+          <p>Organizing your grid into rows is as easy as organizing it into columns. Use the grid-template-rows property and define the widths for the number of rows you would like. To create 3 rows, 20px each, it would look like this:</p>
+          <pre><code>.container {
+          display: grid;
+          grid-template-rows: 20px 20px 20px;
+        }
+    </code></pre>
+        </section>
+        <section id="Columns_and_Rows" class="main-section">
+          <header>Columns and Rows</header>
+          <p>Have just columns or just rows in a grid is too simple for most websites. Both are usually incorporated to allow for several sections. To create a grid with 3 columns and 3 rows, this is what you would code:</p>
+          <pre><code>.container {
+          display: grid;
+          grid-template-rows: 50px 50px 50px;
+          grid-template-columns: 50px 50px 50px;
+        }
+    </code></pre>
+          <p>This would create a grid 3 cells across and 3 cells down.</p>
+        </section>
+        <section id="Cell_Measurements" class="main-section">
+          <header>Cell Measurements</header>
+          <p>When creating columns and rows you are not limited to using the pixel measurement. The cells created with the rows and columns can be measured in both relative and absolute measurements. Here is a list of some of the measurements that can be used:</p>
+          <ul>
+            <li> px - measures the cells into pixels
+            </li>
+            <li> em - measures the cells by ems
+            </li>
+            <li>fr - sets the column or row to a fraction of the available space
+            </li>
+            <li>auto: sets the column or row to the width or height of its content automatically
+            </li>
+            <li>%: adjusts the column or row to the percent width of its container
+            </li>
+          </ul>
+          <p>These measurements can be used at the same time, for instance:</p>
+          <pre><code>.container {
+          display: grid;
+          grid-template-rows: 50px 50px 50px;
+          grid-template-columns: auto 50px 10% 2fr 1fr;
+        }
+    </code></pre>
+          <p>This would create a grid with 3 uniform rows, each 50px. It would also create 5 columns. The first column is as wide as its content, the second column is 50px, the third column is 10% of its container, and for the last two columns; the remaining
+            space is divided into three sections, two are allocated for the fourth column, and one for the fifth.
+          </p>
+        </section>
+        <section id="Grid_Gaps" class="main-section">
+          <header>Grid Gaps</header>
+          <p>To place gaps between the cells, 3 properties can be used - grid-row-gap, grid-column-gap, and grid-gap, followed by the width of the desired gap. In the case of the property grid-gap, if only one value is used, it will set the gap for both columns
+            and rows, but if two values are used, the first will set the gap between the rows and the second will set the gap between the columns. For instance:</p>
+          <pre><code>
+          grid-row-gap: 5px //sets the gap between the rows to 5px
+          grid-column-gap: 5px //sets the gap between the rows to 5px
+          grid-gap: 50px //sets the gap between the rows and columns to 5px
+          grid-gap: 5px 10px //sets the gap between the rows to 5px and the columns to 10px
+        }
+    </code></pre>
+        </section>
+        <section id="Spacing_and_Aligning" class="main-section">
+          <header>Spacing and Aligning</header>
+          <p>Now that the columns, rows, gaps, and cells have been formatted, there are many options. You can align and justify content within the cells, you can create cells that are contained within several cells, and you can create templates that can be manipulated.
+            For further information on CSS Grids, <a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/" target="_blank">Free Code Camp gives an excellent tutorial.</a></p>
+        </section>
+        <br>
+      </main>
+    </div>
+    <footer>
+      Copyright &copy; 2020 Luciano Nicacio
+    </footer>
+    
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+     
+
+  </body>
+</html>
